@@ -1,92 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Code Quiz</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./style.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container navbar-container mx-0">
-            <div class="row w-100">
-                <div class="col-4 col-md-2">
-                    <button type="button" id="highscore-button" class="btn btn-info">View High Scores</button> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Easy Coding Quiz</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container navbar-container mx-0">
+        <div class="row w-100">
+          <div class="col-4 col-md-2">
+            <button type="button" id="highscore-button" class="btn btn-primary">
+              High Scores
+            </button>
+          </div>
+          <div class="col-3 col-md-7"></div>
+          <div class="col-5 col-md-3">
+            <form>
+              <div class="form-group row">
+                <label id="countdown" class="col-sm-7 col-form-label"
+                  >COUNTDOWN</label>
+
+                <div class="col-sm-5">
+                  <input
+                    type="number"
+                    readonly
+                    class="form-control"
+                    id="countdown"
+                    placeholder="0"
+                  />
                 </div>
-                <div class="col-3 col-md-7"></div>
-                <div class="col-5 col-md-3">
-                    <form>
-                        <div class="form-group row">
-                            <label for="time-remaining" class="col-sm-7 col-form-label">Time Remaining</label>
-                            <div class="col-sm-5">
-                                <input type="number" readonly class="form-control" id="time-remaining" placeholder="0">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </nav>
 
     <div id="landing-container" class="container">
-        <div class="row mb-3">
-            <div class="col-12 text-center">
-                <h1>Code Quiz</h1>
-            </div>
+      <div class="row mb-3">
+        <div class="col-12 text-center">
+          <h1>Quiz Time</h1>
         </div>
-        <div class="row mb-3">
-            <div class="col-12 text-center">
-                <p>Answer all the questions before the timer runs out!  Each wrong answer will subtract 15 seconds from the timer.  The more time left on the clock when all questions are answered, the higher your score!</p>
-            </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12 text-center">
+          <p>
+            You get 20 seconds to anwser each question. If you get one wrong 20
+            seconds is deducted from your score. The more time you have left the
+            higher your score.
+          </p>
         </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <button id="start-button" type="button" class="btn btn-secondary btn-lg">Start Quiz</button>
-            </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <button
+            id="start-button"
+            type="button"
+            class="btn btn-primary btn-lg"
+          >
+            Start Quiz
+          </button>
         </div>
+      </div>
     </div>
 
-    <div id="quiz-container" class="container d-none">
-        
-    </div>
+    <div id="quiz-container" class="container d-none"></div>
     <div id="final-container" class="container d-none">
-        <div class="row">
-            <div class="col-12 text-center">
-                <form>
-                    <div class="form-group row">
-                        <label for="final-score" class="col-sm-7 col-form-label">Final Score</label>
-                        <div class="col-sm-5">
-                            <input type="number" readonly class="form-control" id="final-score" placeholder="0">
-                        </div>
-                    </div>
-                </form>
-                <form>
-                    <div class="form-group">
-                      <label for="initials-entry">Initials</label>
-                      <input type="text" class="form-control" id="initials-entry" placeholder="Enter initials">
-                    </div>
-                    <button id="submit-initials" type="button" class="btn btn-primary">Submit</button>
-                </form>
+      <div class="row">
+        <div class="col-12 text-center">
+          <form>
+            <div class="form-group row">
+              <label for="final-score" class="col-sm-7 col-form-label"
+                >Final Score</label
+              >
+              <div class="col-sm-5">
+                <input
+                  type="number"
+                  readonly
+                  class="form-control"
+                  id="final-score"
+                  placeholder="0"
+                />
+              </div>
             </div>
+          </form>
+          <form>
+            <div class="form-group">
+              <label for="initials-entry">Initials</label>
+              <input
+                type="text"
+                class="form-control"
+                id="initials-entry"
+                placeholder="Enter initials"
+              />
+            </div>
+            <button id="submit-initials" type="button" class="btn btn-primary">
+              Submit
+            </button>
+          </form>
         </div>
+      </div>
     </div>
     <div id="highscore-container" class="container d-none">
-        <div class="row">
-            <div class="col-2"></div>
-            <div id="highscore-table" class="col-8">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h2>High Scores</h2>
-                    </div>
-                </div>
+      <div class="row">
+        <div class="col-2"></div>
+        <div id="highscore-table" class="col-8">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h2>High Scores</h2>
             </div>
-            <div class="col-2"></div>
+          </div>
         </div>
+        <div class="col-2"></div>
+      </div>
     </div>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-    <script src="./questions.js"></script>
     <script src="myjava.js"></script>
-</body>
+  </body>
 </html>
