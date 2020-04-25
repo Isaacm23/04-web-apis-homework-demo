@@ -6,11 +6,11 @@
 This project was ment to demonstrate the use of apis to create a quiz. The quiz had to be timed and a high score had to be recorded. 
 
 ### Visuals
-![jif](codequiz.gif"img web layout")
+![](codequiz.gif)
 
 
 ### Usage
-TO test your coding know
+TO test your coding knowledge
 
 ##### Support
 If you fail this quiz please get support 
