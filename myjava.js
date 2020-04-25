@@ -34,10 +34,10 @@ function initQuiz() {
         var startBnt = document.getElementById("start-button");
         var final = document.getElementById("final-score");
         var numQuestions = questions.length;
-        var landing = document.getElementById("landing-container");
+        var landing = document.getElementById("quizTime-container");
         var quizContainerEl = document.getElementById("quiz-container");
         var finalContainerEl = document.getElementById("final-container");
-        var submitBnt = document.getElementById("submit-initials");
+        var submitBnt = document.getElementById("submit");
         var highscoreContainerEl = document.getElementById("highscore-container");
         var highscoreBnt = document.getElementById("highscore-button");
         var highScores = [];
@@ -82,7 +82,7 @@ function initQuiz() {
                     rowEl.append(colEl2);
 
                     buttonEl = document.createElement("button");
-                    buttonEl.setAttribute("class","btn btn-primary");
+                    buttonEl.setAttribute("class","btn btn-secondary");
                     buttonEl.setAttribute("type","button");
                     buttonEl.innerHTML = questions[currentQuestion-1].choices[i];
                     colEl2.append(buttonEl);
@@ -186,3 +186,30 @@ function initQuiz() {
             
             generateQuestion(currentQuestion);
         }
+
+        startBnt.addEventListener("click",startQuiz);
+
+        highscoreBnt.addEventListener("click",function() {
+            landing.setAttribute("class","container d-none");
+            quizContainerEl.setAttribute("class","container d-none");
+            finalContainerEl.setAttribute("class","container d-none");
+            highscoreContainerEl.setAttribute("class","container");
+            let colEl = document.getElementById("highscore-table");
+            for (i=0; i<highScores.length; i++) {
+                let rowEl = document.createElement("div");
+                rowEl.setAttribute("class","row mb-1");
+                colEl.append(rowEl);
+
+                let colEl2 = document.createElement("div");
+                colEl2.setAttribute("class","col-12 text-center");
+                rowEl.append(colEl2);
+
+                let parEl = document.createElement("div");
+                parEl.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + highScores[i].highScore;
+                colEl2.append(parEl);
+            }
+        });
+    
+    };
+    
+initQuiz();
