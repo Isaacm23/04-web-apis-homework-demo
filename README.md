@@ -4,9 +4,8 @@
 ## Description
 This project was ment to demonstrate the use of apis to create a quiz. The quiz had to be timed and a high score had to be recorded. 
 
-## Acceptance Criteria
+## Criteria
 
-```
 GIVEN I am taking a code quiz
 WHEN I click the start button
 THEN a timer starts and I am presented with a question
