@@ -69,7 +69,7 @@ function initQuiz() {
             let clickTimeout = false;
             function generateQuestion(questionNum) {
                
-                newFunction();
+                
 
                 colEl = quizContainerEl.children[0].children[1];
                 for (var i=0; i<4; i++) {
