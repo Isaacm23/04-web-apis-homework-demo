@@ -1,14 +1,11 @@
 # 04-web-apis-homework-demo
-Name
-Choose a self-explaining name for your project.
+#Name
+#04-web-apis-homework-demo
 
-Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+##Description
+This project was ment to demonstrate the use of apis to create a quiz. The quiz had to be timed and a high score had to be recorded. 
 
-Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-Visuals
+###Visuals
 Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
 Installation

@@ -47,7 +47,7 @@ function initQuiz() {
         }
     
         function startQuiz() {
-
+            
             quizContainerEl.setAttribute("class","container");
             var currentQuestion = 1;
             var score = 0;
@@ -87,7 +87,7 @@ function initQuiz() {
                     buttonEl.innerHTML = questions[currentQuestion-1].choices[i];
                     colEl2.append(buttonEl);
                     buttonEl.addEventListener("click",function(){
-                        //  When the user clicks one of the answer buttons, if it is the correct answer, the message "Correct" is displayed, and if not, the message "Incorrect" is displayed and 15 seconds deducted from the timer
+                        
                         if (clickTimeout) {
                             return;
                         }
@@ -144,7 +144,7 @@ function initQuiz() {
                 }
                 
 
-
+            //creates the questions divs
                 function newFunction() {
                     quizContainerEl.innerHTML = "";
                     rowEl = document.createElement("div");
