@@ -1,5 +1,4 @@
-# 04-web-apis-homework-demo
-# Name
+
 # 04-web-apis-homework-demo
 
 ## Description
