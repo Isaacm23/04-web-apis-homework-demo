@@ -66,10 +66,10 @@ function initQuiz() {
                 timeRemaining = timeRemaining - 1;
                 Countdown.setAttribute("value",timeRemaining);
             },1000);
-            let clickTimeout = false;
+            var clickTimeout = false;
             function generateQuestion(questionNum) {
                
-                
+                newFunction();
 
                 colEl = quizContainerEl.children[0].children[1];
                 for (var i=0; i<4; i++) {
