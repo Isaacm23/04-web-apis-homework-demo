@@ -41,7 +41,7 @@ function initQuiz() {
         var highscoreContainerEl = document.getElementById("highscore-container");
         var highscoreBnt = document.getElementById("highscore-button");
         var highScores = [];
-            //  stores and receives arrays
+            //  stores to local storage
         if (JSON.parse(localStorage.getItem('scores')) !== null) {
             highScores = JSON.parse(localStorage.getItem("scores"));
         }
@@ -58,7 +58,7 @@ function initQuiz() {
             var myInterval = setInterval(function() {
                 if (timeRemaining<1) {
                     clearInterval(myInterval);
-                    //  hide questions 
+                    
                     quizContainerEl.setAttribute("class","container d-none");
                     finalContainerEl.setAttribute("class","container");
                     return;
@@ -73,21 +73,22 @@ function initQuiz() {
 
                 colEl = quizContainerEl.children[0].children[1];
                 for (var i=0; i<4; i++) {
+                   // creates space between each question
                     var rowEl = document.createElement("div");
                     rowEl.setAttribute("class","row mb-1");
                     colEl.append(rowEl);
-
+                    // displays questions
                     var colEl2 = document.createElement("div");
                     colEl2.setAttribute("class","col-12");
                     rowEl.append(colEl2);
-
+                    //creates clickable buttons for each question
                     buttonEl = document.createElement("button");
                     buttonEl.setAttribute("class","btn btn-secondary");
                     buttonEl.setAttribute("type","button");
                     buttonEl.innerHTML = questions[currentQuestion-1].choices[i];
                     colEl2.append(buttonEl);
                     buttonEl.addEventListener("click",function(){
-                        
+                        // 
                         if (clickTimeout) {
                             return;
                         }
